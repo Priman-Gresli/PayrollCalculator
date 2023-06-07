@@ -1,1 +1,0 @@
-{"mappings":"AAAA;;;;;AAGE","sources":["src/scss/style.scss"],"sourcesContent":["form {\n  padding: 10px;\n  margin: 10px;\n  div{\n\n    width: 50vw;\n  }\n}"],"names":[],"version":3,"file":"index.e8265c92.css.map","sourceRoot":"/__parcel_source_root/"}

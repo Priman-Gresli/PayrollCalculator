@@ -17,12 +17,11 @@ public class PayrollServiceImpl implements PayrollService {
     @Autowired
     private EmployeeRepository repository;
 
-
     @Override
     public String getEmployee() {
         Optional<EmployeeEntity> byId = repository.findById(1L);
         EmployeeEntity employeeEntity = byId.get();
-       return employeeEntity.getName();
+        return employeeEntity.getName();
     }
     @Autowired
     private ApplicationPropertyServiceImpl applicationPropertyService;
@@ -97,7 +96,16 @@ public class PayrollServiceImpl implements PayrollService {
         double etf = etfCalculation(salary);
 
         return salary+epf+etf;
-
     }
+
+    @Override
+    public double getTax(double salary) {
+        double minSalary = applicationPropertyService.getMinSalary("minSalary");
+
+        if (salary<=minSalary) return 0;
+        double tax = taxCal(salary - minSalary);
+        return tax;
+    }
+
 
 }

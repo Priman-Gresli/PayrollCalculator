@@ -19,12 +19,13 @@ public class PayRollController {
 
 
     @GetMapping("/employee")
-    public String getEmployee(){
-        return payrollService.getEmployee();
+    public ResponseEntity<String> getEmployee(){
+        String employeeName = payrollService.getEmployee();
+        return new ResponseEntity<>(employeeName, HttpStatus.OK);
     }
     @GetMapping("/employee/payroll/{id}")
     public ResponseEntity<List<PayrollResponse>> getPayroll(@PathVariable Long id){
-       List<PayrollResponse> payroll = payrollService.getPayroll(id);
+        List<PayrollResponse> payroll = payrollService.getPayroll(id);
         return new ResponseEntity<>(payroll, HttpStatus.OK);
     }
 

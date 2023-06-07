@@ -13,6 +13,10 @@ import javax.persistence.Table;
 @Setter
 @Table(name = "employee")
 public class EmployeeEntity extends BaseEntity {
+
+    /**
+     * Entity for the Employee table.
+     */
     @Column(name = "name", nullable = false, unique = false)
     private String name;
     @Column(name = "salary", nullable = false, unique = false)

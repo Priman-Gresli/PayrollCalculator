@@ -8,4 +8,6 @@ public interface PayrollService {
     String getEmployee();
     List<PayrollResponse> getPayroll(Long id);
     double getTotalCost(Long id);
+
+    double getTax(double salary);
 }

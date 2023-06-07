@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payroll-Calculator</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="jquery-3.5.1.min.js">
+    <script src="js/main.js"></script>
+</head>
+<body>
+<form>
+    <label for="salary">Enter Salary:</label>
+    <input type="number" id="salary" name="salary" required>
+    <button id="tax" type="button">Calculate Tax</button>
+</form>
+
+<div id="result"></div>
+
+<script>
+    console.log($===jquery)
+    const REST_API_URL = `http://localhost:8000`;
+    var salary = parseFloat(document.getElementById('salary').value);
+    var apiUrl = "http://localhost:8000/tax/calculate?salary=5000000";
+    calculateTax();
+
+    function calculateTax() {
+
+        const jqxhr = $.ajax(apiUrl);
+        jqxhr.done((salary) => {
+            // imageUrlList.forEach(imageUrl => {
+            //     const divElm = $(`<div class="image"></div>`);
+            //     divElm.css('background-image', `url(${imageUrl})`);
+            //     mainElm.append(divElm);
+            // });
+            console.log(salary)
+        });
+        jqxhr.fail(() => {
+        });
+    }
+
+</script>
+</body>
+</html>
