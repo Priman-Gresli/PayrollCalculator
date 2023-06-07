@@ -3,24 +3,24 @@ body {
   margin: 5vw 5vh;
 }
 
-#tax-cal-form, #etf-cal-form, #min-salary-form, #employee-id {
+#tax-cal-form, #etf-cal-form, #min-salary-form, #cost-cal-form, #emp-cal-form {
   width: 500px;
 }
 
-#tax-cal-form label, #etf-cal-form label, #min-salary-form label, #employee-id label {
+#tax-cal-form label, #etf-cal-form label, #min-salary-form label, #cost-cal-form label, #emp-cal-form label {
   font-size: 1.5rem;
 }
 
-#tax-cal-form input, #etf-cal-form input, #min-salary-form input, #employee-id input {
+#tax-cal-form input, #etf-cal-form input, #min-salary-form input, #cost-cal-form input, #emp-cal-form input {
   margin: 10px;
 }
 
-#tax-cal-form button, #etf-cal-form button, #min-salary-form button, #employee-id button {
+#tax-cal-form button, #etf-cal-form button, #min-salary-form button, #cost-cal-form button, #emp-cal-form button {
   width: 200px;
   margin: 10px;
 }
 
-#tax-cal-form div, #etf-cal-form div, #min-salary-form div, #employee-id div, .result-font {
+#tax-cal-form div, #etf-cal-form div, #min-salary-form div, #cost-cal-form div, #emp-cal-form div, .result-font {
   font-size: 1.5rem;
 }
 
@@ -30,6 +30,10 @@ header, #min-salary-form {
 
 #etf-div {
   margin: 20px;
+}
+
+#emp-cal-form {
+  margin-top: 40px;
 }
 
 /*# sourceMappingURL=index.e8265c92.css.map */

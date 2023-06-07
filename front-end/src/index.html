@@ -62,10 +62,37 @@
     <form id="cost-cal-form" class="d-flex flex-column justify-content-center align-items-center">
         <label for="employee-id">Enter Employee ID</label>
         <input type="number" id="employee-id" name="salary2" class="form-control"
-               placeholder="Enter the Salary" aria-label="Username" aria-describedby="basic-addon1" >
+               placeholder="Enter Employee ID" aria-label="Username" aria-describedby="basic-addon1" >
         <button id="cost" type="button" class="btn btn-primary">Calculate Cost</button>
-        <div>Cost - <span id="cost-result" class="result-font"></span></div>
+        <div>Cost -<span id="cost-result" class="result-font"></span></div>
     </form>
+
+    <form id="emp-cal-form" class="d-flex flex-column justify-content-center align-items-center">
+        <label>Employees Salary Distribution</label>
+        <button id="emp" type="button" class="btn btn-primary">Show</button>
+    </form>
+    <div id="emp-div">
+
+        <table id="emp-table" class="table">
+            <thead>
+            <tr>
+
+                <th scope="col">Employee ID</th>
+                <th scope="col">Employee Name</th>
+                <th scope="col">Take Home Salary</th>
+                <th scope="col">TAX</th>
+                <th scope="col">ETF</th>
+                <th scope="col">EPF</th>
+            </tr>
+            </thead>
+            <tbody id="emp-tbody">
+            <tr id="employee-row">
+
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
 
 </main>
 </body>

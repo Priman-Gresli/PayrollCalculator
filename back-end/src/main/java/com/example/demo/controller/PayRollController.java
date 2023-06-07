@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.response.PayrollResponse;
+import com.example.demo.response.SalaryDistributionResponse;
 import com.example.demo.service.PayrollService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -35,6 +36,13 @@ public class PayRollController {
     public ResponseEntity<Double> getTotalCost(@PathVariable Long id){
         double totalCost = payrollService.getTotalCost(id);
         return new ResponseEntity<>(totalCost, HttpStatus.OK);
+    }
+
+    @GetMapping("/employee/salary-distribution")
+    public ResponseEntity<List<SalaryDistributionResponse>> getAllEmployeeSalaryDistribution(){
+        List<SalaryDistributionResponse> salaryDistributionResponses =
+                payrollService.getAllEmployeeSalaryDistribution();
+        return new ResponseEntity<List<SalaryDistributionResponse>>(salaryDistributionResponses, HttpStatus.OK);
     }
 
 }

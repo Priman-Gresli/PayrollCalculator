@@ -3,6 +3,7 @@ package com.example.demo.service.impl;
 import com.example.demo.dao.entity.EmployeeEntity;
 import com.example.demo.dao.repository.EmployeeRepository;
 import com.example.demo.response.PayrollResponse;
+import com.example.demo.response.SalaryDistributionResponse;
 import com.example.demo.service.PayrollService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,6 +17,8 @@ public class PayrollServiceImpl implements PayrollService {
 
     @Autowired
     private EmployeeRepository repository;
+
+    final double stampFeeCalculation = 25.00;
 
     @Override
     public String getEmployee() {
@@ -35,10 +38,9 @@ public class PayrollServiceImpl implements PayrollService {
 
         double etf = epfCalculation(salary);
         double epf = etfCalculation(salary);
-        double stampFeeCalculation = 25.00;
         double tax = taxCal(salary - minSalary);
         double sportFee = sportClubFeeCalculation(salary);
-        double takeHomeSalary=salary-tax-epfEmployeeCalculation(salary)-stampFeeCalculation-sportFee;
+        double takeHomeSalary= getTakeHomeSalary(salary, stampFeeCalculation, tax, sportFee);
 
         PayrollResponse payrollResponse = new PayrollResponse();
         payrollResponse.setEpf(epf);
@@ -52,6 +54,9 @@ public class PayrollServiceImpl implements PayrollService {
 
     }
 
+    private double getTakeHomeSalary(double salary, double stampFeeCalculation, double tax, double sportFee) {
+        return salary - tax - epfEmployeeCalculation(salary) - stampFeeCalculation - sportFee;
+    }
 
 
     public double epfCalculation(double salary) {
@@ -111,6 +116,37 @@ public class PayrollServiceImpl implements PayrollService {
         double tax = taxCal(salary - minSalary);
         return tax;
     }
+
+    @Override
+    public List<SalaryDistributionResponse> getAllEmployeeSalaryDistribution() {
+
+        List<SalaryDistributionResponse> result = new ArrayList<>();
+        List<EmployeeEntity> employees = repository.findAll();
+        System.out.println(employees);
+        for (EmployeeEntity employee : employees) {
+            SalaryDistributionResponse salaryDistributionOfEmployee = new SalaryDistributionResponse();
+            System.out.println(employee.getName());
+            salaryDistributionOfEmployee.setEmployeeId(employee.getId());
+            salaryDistributionOfEmployee.setEmployeeName(employee.getName());
+
+            double epf = epfEmployeeCalculation(employee.getSalary());
+            salaryDistributionOfEmployee.setEpf(epf);
+
+            double eft = etfCalculation(employee.getSalary());
+            salaryDistributionOfEmployee.setEtf(eft);
+
+            double tax = getTax(employee.getSalary());
+            salaryDistributionOfEmployee.setTax(tax);
+
+            double takeHomeSalary = getTakeHomeSalary(employee.getSalary(), stampFeeCalculation, tax,
+                    sportClubFeeCalculation(employee.getSalary()));
+            salaryDistributionOfEmployee.setTakeHomeSalary(takeHomeSalary);
+
+            result.add(salaryDistributionOfEmployee);
+        }
+        return result;
+    }
+
 
 
 }

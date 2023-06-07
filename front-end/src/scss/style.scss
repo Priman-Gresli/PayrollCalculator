@@ -4,7 +4,7 @@ body{
 
 }
 
-#tax-cal-form,#etf-cal-form,#min-salary-form,#employee-id{
+#tax-cal-form,#etf-cal-form,#min-salary-form,#cost-cal-form,#emp-cal-form{
 
   label{
     font-size: 1.5rem;
@@ -30,4 +30,7 @@ header,#min-salary-form{
 }
 #etf-div{
   margin: 20px;
+}
+#emp-cal-form{
+  margin-top: 40px;
 }
