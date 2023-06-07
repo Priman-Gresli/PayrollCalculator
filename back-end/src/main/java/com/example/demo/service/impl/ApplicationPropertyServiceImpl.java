@@ -7,6 +7,8 @@ import com.example.demo.service.ApplicationPropertyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+
 @Service
 public class ApplicationPropertyServiceImpl implements ApplicationPropertyService {
 
@@ -14,6 +16,7 @@ public class ApplicationPropertyServiceImpl implements ApplicationPropertyServic
     private ApplicationPropertyRepository applicationPropertyRepository;
 
 
+    @Transactional
     @Override
     public void setMinSalary(ApplicationPropertyEntity applicationProperty) {
         ApplicationPropertyEntity minSalaryProperty = applicationPropertyRepository.findByPropertyName(
@@ -34,10 +37,7 @@ public class ApplicationPropertyServiceImpl implements ApplicationPropertyServic
         return minSalary.getPropertyvalue();
     }
 
-    @Override
-    public void updateMinSalary(double value, String name) {
-        applicationPropertyRepository.updateByPropertyName(value, name);
-    }
+
 
 
 }

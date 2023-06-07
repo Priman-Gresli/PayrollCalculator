@@ -17,8 +17,4 @@ public class ApplicationPropertiesController {
         applicationPropertyService.setMinSalary(applicationProperty);
     }
 
-    @PutMapping("/application")
-    public void updateMinSalary(@RequestBody ApplicationPropertyEntity applicationProperty){
-        applicationPropertyService.updateMinSalary(applicationProperty.getPropertyvalue(),applicationProperty.getPropertyname());
-    }
 }
