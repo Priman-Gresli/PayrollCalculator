@@ -26,8 +26,8 @@ public class ApplicationPropertyServiceImpl implements ApplicationPropertyServic
     }
 
     @Override
-    public double updateMinSalary(String applicationProperty) {
-        applicationPropertyRepository.
+    public void updateMinSalary(double value, String name) {
+        applicationPropertyRepository.updateByPropertyName(value, name);
     }
 
 

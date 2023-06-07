@@ -15,7 +15,8 @@ public interface ApplicationPropertyRepository extends JpaRepository<Application
     @Query(value = "SELECT * FROM appdata a WHERE a.propertyname = ?1 ORDER BY 1", nativeQuery = true)
     ApplicationPropertyEntity findByPropertyName(String name);
 
-    @Query(value = "UPDATE propertyname e SET e.field = :updatedValue WHERE e.id = :recordId")
-    ApplicationPropertyEntity findByPropertyName(String name);
+    @Query(value = "UPDATE appdata a set a.propertyvalue =?1 WHERE a.propertyname = ?2 ", nativeQuery = true)
+    ApplicationPropertyEntity updateByPropertyName(double value, String name);
+
 }
 
