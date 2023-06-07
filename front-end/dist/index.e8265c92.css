@@ -1,62 +1,35 @@
 body {
-  overflow: hidden;
+  background-color: #b6cff5;
+  margin: 5vw 5vh;
+}
+
+#tax-cal-form, #etf-cal-form {
+  width: 500px;
+}
+
+#tax-cal-form label, #etf-cal-form label {
+  font-size: 1.5rem;
+}
+
+#tax-cal-form input, #etf-cal-form input {
+  margin: 10px;
+}
+
+#tax-cal-form button, #etf-cal-form button {
+  width: 200px;
+  margin: 10px;
+}
+
+#tax-cal-form div, #etf-cal-form div, .result-font {
+  font-size: 1.5rem;
 }
 
 header {
-  border-bottom: 2px solid #aba2a2;
-  margin: 10px;
-  padding: 10px;
+  padding-bottom: 30px;
 }
 
-#outer-drag {
-  width: 100vw;
-  height: 100vh;
-  opacity: .8;
-  background-color: #bbd6e0d6;
-}
-
-#drag-drop {
-  width: 50vw;
-  height: 70vh;
-}
-
-#drag-drop span {
-  font-size: 100px;
-}
-
-#drag-drop p {
-  text-align: center;
-  font-size: 2.5rem;
-}
-
-.image {
-  width: 200px;
-  height: 150px;
-  background-position: center;
-  background-size: cover;
-  border: 2px dashed #000;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  transition-property: transform;
-  transition-duration: .5s;
-}
-
-.image:hover {
-  cursor: pointer;
-  transform: scale(1.1);
-}
-
-.image:hover .material-symbols-outlined {
-  visibility: visible;
-}
-
-.image span {
-  visibility: hidden;
-}
-
-#main-scene {
+#etf-div {
   margin: 20px;
-  padding: 10px;
 }
 
 /*# sourceMappingURL=index.e8265c92.css.map */

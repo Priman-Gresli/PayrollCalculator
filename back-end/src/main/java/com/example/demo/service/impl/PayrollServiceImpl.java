@@ -83,6 +83,11 @@ public class PayrollServiceImpl implements PayrollService {
                 break;
             }
             count ++;
+            if (count > 5) {
+                tax += salary * 0.36;
+                break;
+            }
+
         }
         return tax;
     }

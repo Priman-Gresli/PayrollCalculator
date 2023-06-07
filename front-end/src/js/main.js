@@ -1,35 +1,81 @@
-const taxBtnElm = $("#tax");
-const taxShowElm = $("#result");
 
-let salary = $("#salary").val();
-let apiUrl = `http://localhost:8000/tax/calculate?salary=${salary}`;
-console.log(salary)
-taxBtnElm.on('click',()=>{
-    console.log(salary)
-    // calculateTax();
-});
 
-function calculateTax() {
+
+// document.getElementById("salary")
+// let salary = document.getElementById("salary").innerText;
+// let salary = $("#salary12").val();
+// let apiUrl = `http://localhost:8000/tax/calculate?salary=${salary}`;
+// // console.log(salary)
+// taxBtnElm.on('click',()=>{
+//     console.log(salary)
+//     // calculateTax();
+// });
+//
+// function calculateTax() {
+//
+//     const jqxhr = $.ajax(apiUrl);
+//     jqxhr.done((salary1) => {
+//         console.log(salary1);
+//         taxShowElm.text(salary1);
+//     });
+//     jqxhr.fail(() => {
+//     });
+// }
+$(document).ready(function() {
+
+let taxShowElm = $("#result");
+    let taxButton = $("#tax");
+    let etfButton = $("#etf");
+    let tableRow = $("#eft-row");
+
+
+
+    // Attach an event listener to the button
+    taxButton.on("click", function() {
+        // Get the value of the input field
+        let value = $("#salary12").val();
+        let apiUrl = `http://localhost:8000/tax/calculate?salary=${value}`;
+        calculateTax(apiUrl);
+
+    });
+    etfButton.on("click", function() {
+        // Get the value of the input field
+        let value = $("#emplyee").val();
+        console.log(value)
+        let apiUrl = `http://localhost:8000/employee/payroll/${value}`;
+        calculateETF(apiUrl);
+
+    });
+
+//
+function calculateTax(apiUrl) {
 
     const jqxhr = $.ajax(apiUrl);
     jqxhr.done((salary1) => {
-        console.log(salary1);
-        taxShowElm.text(salary1);
+        taxShowElm.text(`Rs:${salary1}`);
     });
     jqxhr.fail(() => {
     });
 }
+function calculateETF(apiUrl) {
 
-function loadAll() {
-    // const ajax = $.ajax(REST_API_URL + "/images");
-    // ajax.done((imageList) => {
-    //     imageList.forEach(imageUrl => {
-    //         console.log(imageUrl);
-    //         const divElm = $(`<div class="image"><span class="material-symbols-outlined">download</span></div>`);
-    //         divElm.css('background-image', `url(${imageUrl})`);
-    //         imageDivElm.append(divElm);
-    //     })
-    // })
+    const jqxhr = $.ajax(apiUrl);
+    jqxhr.done((etfList) => {
+       tableRow.empty();
+        etfList.forEach(value=>{
+
+            console.log(value)
+            tableRow.append(`<td>${value.takeHomeSalary}</td>`);
+            tableRow.append(`<td>${value.etf}</td>`);
+            tableRow.append(`<td>${value.epf}</td>`);
+
+        })
+    });
+    jqxhr.fail(() => {
+    });
 }
+});
+
+
 
 

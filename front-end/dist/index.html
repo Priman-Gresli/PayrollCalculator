@@ -12,14 +12,45 @@
     <script src="/index.18dbc454.js" defer=""></script>
 </head>
 <body>
-<form>
-    <label for="salary">Enter Salary:</label>
-    <input type="number" id="salary" name="salary2" required="">
-    <button id="tax" type="button">Calculate Tax</button>
-</form>
+<header>
+    <h1 class="text-center">Payroll Calculator</h1>
+</header>
+<main class="d-flex flex-column justify-content-center align-items-center">
+    <form id="tax-cal-form" class="d-flex flex-column justify-content-center align-items-center">
+        <label for="salary12">Enter Salary:</label>
+        <input type="number" id="salary12" name="salary2" class="form-control" placeholder="Enter the Salary" aria-label="Username" aria-describedby="basic-addon1">
+        <button id="tax" type="button" class="btn btn-primary">Calculate Tax</button>
+        <div>Tax - <span id="result" class="result-font"></span></div>
+    </form>
+    <div id="etf-div">
+        <form id="etf-cal-form" class="d-flex flex-column justify-content-center align-items-center">
+            <label for="emplyee">Enter Employee Id:</label>
+            <input type="text" id="emplyee" name="salary2" class="form-control" placeholder="Enter Employee Id" aria-label="Username" aria-describedby="basic-addon1">
+            <button id="etf" type="button" class="btn btn-primary">Calculate</button>
+            <div>
 
-<div id="result"></div>
+            </div>
+        </form>
+    <div>
+        <table class="table">
+            <thead>
+            <tr>
 
+                <th scope="col">Take Home Salary</th>
+                <th scope="col">ETF</th>
+                <th scope="col">EPF</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr id="eft-row">
 
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+    </div>
+
+</main>
 </body>
 </html>
