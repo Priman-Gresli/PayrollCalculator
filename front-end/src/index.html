@@ -18,8 +18,15 @@
     <h1 class="text-center">Payroll Calculator</h1>
 </header>
 <main class="d-flex flex-column justify-content-center align-items-center">
+    <form id="min-salary-form" class="d-flex flex-column justify-content-center align-items-center">
+        <label for="min-salary">Set Minimum Salary</label>
+        <input type="number" id="min-salary" name="salary2" class="form-control"
+               placeholder="Enter the Minimum Salary" aria-label="Username" aria-describedby="basic-addon1" >
+        <button id="min-salary-btn" type="button" class="btn btn-primary">Set</button>
+
+    </form>
     <form id="tax-cal-form" class="d-flex flex-column justify-content-center align-items-center">
-        <label for="salary12">Enter Salary:</label>
+        <label for="salary12">Enter Salary</label>
         <input type="number" id="salary12" name="salary2" class="form-control"
                placeholder="Enter the Salary" aria-label="Username" aria-describedby="basic-addon1" >
         <button id="tax" type="button" class="btn btn-primary">Calculate Tax</button>
@@ -27,7 +34,7 @@
     </form>
     <div id="etf-div">
         <form id="etf-cal-form" class="d-flex flex-column justify-content-center align-items-center">
-            <label for="emplyee">Enter Employee Id:</label>
+            <label for="emplyee">Enter Employee Id</label>
             <input type="text" id="emplyee" name="salary2" class="form-control"
                    placeholder="Enter Employee Id" aria-label="Username" aria-describedby="basic-addon1" >
             <button id="etf" type="button" class="btn btn-primary">Calculate</button>
