@@ -3,37 +3,33 @@ body {
   margin: 5vw 5vh;
 }
 
-#tax-cal-form, #etf-cal-form, #min-salary-form {
+#tax-cal-form, #etf-cal-form, #min-salary-form, #employee-id {
   width: 500px;
 }
 
-#tax-cal-form label, #etf-cal-form label, #min-salary-form label {
+#tax-cal-form label, #etf-cal-form label, #min-salary-form label, #employee-id label {
   font-size: 1.5rem;
 }
 
-#tax-cal-form input, #etf-cal-form input, #min-salary-form input {
+#tax-cal-form input, #etf-cal-form input, #min-salary-form input, #employee-id input {
   margin: 10px;
 }
 
-#tax-cal-form button, #etf-cal-form button, #min-salary-form button {
+#tax-cal-form button, #etf-cal-form button, #min-salary-form button, #employee-id button {
   width: 200px;
   margin: 10px;
 }
 
-#tax-cal-form div, #etf-cal-form div, #min-salary-form div, .result-font {
+#tax-cal-form div, #etf-cal-form div, #min-salary-form div, #employee-id div, .result-font {
   font-size: 1.5rem;
 }
 
-header {
+header, #min-salary-form {
   padding-bottom: 30px;
 }
 
 #etf-div {
   margin: 20px;
-}
-
-#min-salary-form {
-  margin-bottom: 20px;
 }
 
 /*# sourceMappingURL=index.e8265c92.css.map */

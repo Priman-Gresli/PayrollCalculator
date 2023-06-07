@@ -31,5 +31,9 @@ public interface ApplicationPropertyRepository extends JpaRepository<Application
     @Query(value = "UPDATE appdata a set a.propertyvalue=?1 WHERE a.propertyname=?2",nativeQuery = true)
     void updateByPropertyName(double value, String name);
 
+    @Modifying
+    @Query("UPDATE appdata a SET a.propertyvalue = ?1 WHERE a.id = ?2")
+    void updateByPropertyId( double value, Long id);
+
 }
 

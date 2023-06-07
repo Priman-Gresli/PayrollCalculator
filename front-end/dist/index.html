@@ -33,9 +33,6 @@
             <label for="emplyee">Enter Employee Id</label>
             <input type="text" id="emplyee" name="salary2" class="form-control" placeholder="Enter Employee Id" aria-label="Username" aria-describedby="basic-addon1">
             <button id="etf" type="button" class="btn btn-primary">Calculate</button>
-            <div>
-
-            </div>
         </form>
     <div>
         <table class="table">
@@ -56,6 +53,13 @@
         </table>
     </div>
     </div>
+
+    <form id="cost-cal-form" class="d-flex flex-column justify-content-center align-items-center">
+        <label for="employee-id">Enter Employee ID</label>
+        <input type="number" id="employee-id" name="salary2" class="form-control" placeholder="Enter the Salary" aria-label="Username" aria-describedby="basic-addon1">
+        <button id="cost" type="button" class="btn btn-primary">Calculate Cost</button>
+        <div>Cost - <span id="cost-result" class="result-font"></span></div>
+    </form>
 
 </main>
 </body>

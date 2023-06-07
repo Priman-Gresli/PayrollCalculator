@@ -16,7 +16,16 @@ public class ApplicationPropertyServiceImpl implements ApplicationPropertyServic
 
     @Override
     public void setMinSalary(ApplicationPropertyEntity applicationProperty) {
-        applicationPropertyRepository.save(applicationProperty);
+        ApplicationPropertyEntity minSalaryProperty = applicationPropertyRepository.findByPropertyName(
+                applicationProperty.getPropertyname()
+        );
+        if (minSalaryProperty != null) {
+            // Record found, update the value
+            Long id = minSalaryProperty.getId();
+            applicationPropertyRepository.updateByPropertyId(applicationProperty.getPropertyvalue(), id);
+        } else {
+            applicationPropertyRepository.save(applicationProperty);
+        }
     }
 
     @Override
