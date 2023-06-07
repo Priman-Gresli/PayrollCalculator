@@ -8,10 +8,13 @@ body{
 
   label{
     font-size: 1.5rem;
+    padding-top: 10px;
   }
   width: 500px;
   input{
     margin: 10px;
+    width: 60%;
+    border: 1px solid #5d5858;
 
   }
   button{
@@ -25,12 +28,15 @@ body{
 .result-font{
   font-size: 1.5rem;
 }
-header,#min-salary-form{
+header,#min-salary-form,.div-gap{
   padding-bottom: 30px;
 }
-#etf-div{
-  margin: 20px;
+.div-gap{
+
 }
-#emp-cal-form{
-  margin-top: 40px;
-}
+//#etf-div{
+//  margin: 20px;
+//}
+//#emp-cal-form{
+//  margin-top: 40px;
+//}

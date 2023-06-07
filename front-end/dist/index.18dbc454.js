@@ -605,7 +605,7 @@ $(document).ready(function() {
         setMinSalary(apiUrl);
     });
     etfButton.on("click", function() {
-        let value = $("#emplyee").val();
+        let value = $("#employee").val();
         let apiUrl = `http://localhost:8000/employee/payroll/${value}`;
         calculateETF(apiUrl);
     });

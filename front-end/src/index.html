@@ -18,28 +18,32 @@
     <h1 class="text-center">Payroll Calculator</h1>
 </header>
 <main class="d-flex flex-column justify-content-center align-items-center">
-    <form id="min-salary-form" class="d-flex flex-column justify-content-center align-items-center">
-        <label for="min-salary">Set Minimum Salary</label>
-        <input type="number" id="min-salary" name="salary2" class="form-control"
+    <div class="row gap-3 div-gap">
+        <form id="min-salary-form" class=" card col-sm-6  d-flex flex-column justify-content-center align-items-center ">
+            <label class="text-center" for="min-salary">Set the tax applicable minimum salary</label>
+            <input type="number" id="min-salary" name="salary2" class="form-control"
                placeholder="Enter the Minimum Salary" aria-label="Username" aria-describedby="basic-addon1" >
         <button id="min-salary-btn" type="button" class="btn btn-primary">Set</button>
 
+
     </form>
-    <form id="tax-cal-form" class="d-flex flex-column justify-content-center align-items-center">
-        <label for="salary12">Enter Salary</label>
+    <form id="tax-cal-form" class="card col-sm-6 d-flex flex-column justify-content-center align-items-center" >
+        <label class="text-center" for="salary12">Calculate the tex for given salary</label>
         <input type="number" id="salary12" name="salary2" class="form-control"
                placeholder="Enter the Salary" aria-label="Username" aria-describedby="basic-addon1" >
         <button id="tax" type="button" class="btn btn-primary">Calculate Tax</button>
         <div>Tax - <span id="result" class="result-font"></span></div>
     </form>
-    <div id="etf-div">
-        <form id="etf-cal-form" class="d-flex flex-column justify-content-center align-items-center">
-            <label for="emplyee">Enter Employee Id</label>
-            <input type="text" id="emplyee" name="salary2" class="form-control"
+    </div>
+    <div class="row gap-3 div-gap">
+    <div id="etf-div" class="col-sm-6 card">
+        <form id="etf-cal-form" class=" d-flex flex-column justify-content-center align-items-center">
+            <label class="text-center" for="employee">Calculate Take home salary, EPF, ETF for given empoyee</label>
+            <input type="number" id="employee" name="salary2" class="form-control"
                    placeholder="Enter Employee Id" aria-label="Username" aria-describedby="basic-addon1" >
             <button id="etf" type="button" class="btn btn-primary">Calculate</button>
         </form>
-    <div>
+    <div >
         <table class="table">
             <thead>
             <tr>
@@ -59,16 +63,17 @@
     </div>
     </div>
 
-    <form id="cost-cal-form" class="d-flex flex-column justify-content-center align-items-center">
-        <label for="employee-id">Enter Employee ID</label>
+    <form id="cost-cal-form" class="col-sm-6 card d-flex flex-column justify-content-center align-items-center">
+        <label class="text-center" for="employee-id">Calculate total cost for the company for given employee</label>
         <input type="number" id="employee-id" name="salary2" class="form-control"
                placeholder="Enter Employee ID" aria-label="Username" aria-describedby="basic-addon1" >
         <button id="cost" type="button" class="btn btn-primary">Calculate Cost</button>
         <div>Cost -<span id="cost-result" class="result-font"></span></div>
     </form>
+    </div>
 
-    <form id="emp-cal-form" class="d-flex flex-column justify-content-center align-items-center">
-        <label>Employees Salary Distribution</label>
+    <form id="emp-cal-form" class=" d-flex flex-column justify-content-center align-items-center">
+        <label class="text-center">Salary distribution of employees</label>
         <button id="emp" type="button" class="btn btn-primary">Show</button>
     </form>
     <div id="emp-div">
